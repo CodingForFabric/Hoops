@@ -4,6 +4,7 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import Providers from '@/components/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,16 +21,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Nav />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Nav />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

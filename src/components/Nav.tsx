@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { SunMoon } from 'lucide-react';
 import NavDropdowns from './NavDropdowns';
+import Cart from './Cart';
 
 const Nav = () => {
   const user = null;
@@ -46,10 +47,15 @@ const Nav = () => {
                   <Link href="/sign-up" className={buttonVariants()}>
                     Create Account
                   </Link>
+                  <span
+                    className="h-6 w-px bg-gray-200"
+                    aria-hidden="true"
+                  ></span>
                 </>
               )}
             </div>
           </div>
+          <Cart />
         </div>
       </MaxWidthWrapper>
     </nav>
